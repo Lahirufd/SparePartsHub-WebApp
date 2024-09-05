@@ -26,7 +26,7 @@ const AdminDashboard = () => {
                     <h2>Orders</h2>
                 </div>
               </a>
-              <a href="warrantyitems">
+              <a href="warranty-items">
                 <div className={styles.card}>
                     <img src="warranty-items.jpg" alt="Warranty Items" className={styles.cardImage} />
                     <h2>Warranty Items</h2>

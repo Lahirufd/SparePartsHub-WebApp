@@ -30,4 +30,20 @@ public class ItemService {
     public List<Item> findItemByUserId(int userId) {
         return itemRepository.findItemsByUserId(userId);
     }
+
+    public List<Item> getAllItems() {
+        return itemRepository.findAll();
+    }
+
+    public Item updateItemStatus(int id, String status) {
+        Item existingItem = itemRepository.findById(id).orElse(null);
+
+        if (existingItem == null) {
+            return null;
+        }
+
+        existingItem.setStatus(status);
+
+        return itemRepository.save(existingItem);
+    }
 }
