@@ -1,0 +1,79 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 1600px;
+  margin: auto;
+  padding: 9rem;
+  background: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.header {
+  margin-bottom: 2rem;
+  font-size: 2.5rem; 
+  color: #1b1b1b;
+}
+
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); /* Increased min-width */
+  gap: 2rem;
+  justify-content: center;
+}
+
+.card {
+  text-align: center;
+  background-color: #fff; 
+  padding: 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  background-color: #f1f1f1;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cardImage {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.card h2 {
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.logoutButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  background-color: #28a745;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  text-transform: uppercase;
+  margin-top: 2rem; 
+}
+
+.logoutButton:hover {
+  background-color: #218838;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}

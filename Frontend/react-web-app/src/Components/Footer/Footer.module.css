@@ -1,0 +1,98 @@
+.footer {
+  background-color: #1b1b1b;
+  color: #fff;
+  padding: 3rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.contact-info {
+  max-width: 30%;
+}
+
+.contact-info-pic {
+  width: 70px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.contact-info h3,
+.quick-contact h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: lightskyblue;
+}
+
+.contact-info p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.contact-logos {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.contact-logos img {
+  width: 50px;
+  height: auto;
+}
+
+.quick-contact {
+  max-width: 40%;
+}
+
+.contact-section {
+  margin-bottom: 2rem;
+}
+
+.contact-section h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: rgb(51, 116, 202);
+}
+
+.contact-section p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.social-links {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.social-links a {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-left: 1rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #ff5722;
+}
+
+.about-us {
+  max-width: 25%;
+}
+
+.about-us h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: lightskyblue;
+}
+
+.about-us p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.about-us img {
+  max-width: 30%;
+  height: auto;
+  margin-top: 1rem;
+}

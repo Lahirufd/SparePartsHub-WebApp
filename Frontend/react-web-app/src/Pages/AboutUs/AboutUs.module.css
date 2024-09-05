@@ -1,0 +1,62 @@
+.aboutUsWrapper {
+  background-color: #f0f0f0;
+}
+
+.aboutUsContainer {
+  max-width: 60%;
+  margin: 4rem auto;
+  padding: 3rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  line-height: 1.7;
+}
+
+.aboutUsContainer h1 {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.introSection, .missionSection, .visionSection {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+  gap: 3rem;
+}
+
+.introSection p, .missionSection p, .visionSection p {
+  flex: 1;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.introImage, .missionImage, .visionImage {
+  flex: 1;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .introSection, .missionSection, .visionSection {
+    flex-direction: column;
+  }
+
+  .introImage, .missionImage, .visionImage {
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .aboutUsContainer h1 {
+    font-size: 2.5rem;
+  }
+
+  .introSection p, .missionSection p, .visionSection p {
+    font-size: 1.1rem;
+  }
+}

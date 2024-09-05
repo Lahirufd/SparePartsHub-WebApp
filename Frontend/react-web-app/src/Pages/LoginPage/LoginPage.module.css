@@ -1,0 +1,86 @@
+.centerWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+}
+
+
+.loginContainer {
+  width: 300px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.loginForm .formGroup {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.loginForm label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.loginForm input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.submitButton:hover {
+  background-color: #0056b3;
+}
+
+.accountOptions {
+  margin-top: 15px;
+}
+
+.accountOptions a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.accountOptions a:hover {
+  text-decoration: underline;
+}
+
+.adminButton {
+  margin-top: 20px;
+  padding: 10px;
+  width: 100%;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.adminButton:hover {
+  background-color: #218838;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}

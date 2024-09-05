@@ -1,0 +1,129 @@
+.itemsPageWrapper {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.itemsContainer {
+  max-width: 80%;
+  margin: 4rem auto;
+  padding: 3rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  font-family: 'Arial', sans-serif;
+  line-height: 1.8;
+}
+
+.itemsContainer h1 {
+  font-size: 2.5rem;
+  color: #343a40;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.searchBar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.searchBar input {
+  width: 100%;
+  max-width: 500px;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+}
+
+.searchButton {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.searchButton:hover {
+  background-color: #0056b3;
+}
+
+.itemsGrid {
+  display: flex;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.itemCard {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  text-align: center;
+  width: 100%;
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Align content horizontally */
+  justify-content: space-between; /* Space between content */
+}
+
+.itemImage {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.itemName {
+  font-size: 1.3rem;
+  color: #343a40;
+  margin: 1rem 0;
+}
+
+.itemDescription {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 15px;
+}
+
+.buyButton {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: auto; /* Ensure the button stays at the bottom of the card */
+}
+
+.buyButton:hover {
+  background-color: #218838;
+}
+
+@media (max-width: 768px) {
+  .itemsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .itemCard {
+    max-width: 90%;
+  }
+
+  .itemsContainer h1 {
+    font-size: 2rem;
+  }
+
+  .searchBar input {
+    font-size: 1.1rem;
+  }
+}

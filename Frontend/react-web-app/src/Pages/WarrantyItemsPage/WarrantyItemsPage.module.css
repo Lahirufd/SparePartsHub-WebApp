@@ -1,0 +1,42 @@
+/* WarrantyItemsPage.module.css */
+
+.main {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+.submitButton {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.header {
+  background-color: #4CAF50;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+.footer {
+  background-color: #4CAF50;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}

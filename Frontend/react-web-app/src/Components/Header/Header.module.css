@@ -1,0 +1,103 @@
+.header {
+  background-color: #1b1b1b;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  margin-right: auto;
+  margin-left: 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.logo img {
+  height: 45px;
+  display: block;
+  border: none;
+}
+
+.nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.navList {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navItem {
+  margin-left: 5rem;
+  position: relative;
+}
+
+.navLink {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover {
+  color: blue;
+}
+
+/* Dropdown styles */
+.dropdown {
+  position: relative;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #333;
+  padding: 1rem 0;
+  list-style: none;
+  margin: 0;
+  width: 200px;
+  display: none;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.dropdownMenu li {
+  padding: 0;
+  position: relative;
+}
+
+.dropdownLink {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  border-radius: 4px;
+}
+
+.dropdownLink:hover {
+  background-color: darkblue;
+}
+
+/* Shape at the top of the dropdown menu */
+.dropdownMenu::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 10%;
+  border: 10px solid transparent;
+  border-bottom-color: #333;
+  z-index: 1000;
+}
+
+.navItem.dropdown:hover .dropdownMenu {
+  display: block;
+}
