@@ -1,0 +1,106 @@
+.claimedItemsPageWrapper {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.claimedItemsContainer {
+  max-width: 80%;
+  margin: 4rem auto;
+  padding: 3rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  font-family: 'Arial', sans-serif;
+  line-height: 1.8;
+}
+
+.claimedItemsContainer h1 {
+  font-size: 2.5rem;
+  color: #343a40;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.claimedItemsGrid {
+  display: flex;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.claimedItemCard {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  text-align: center;
+  width: 100%;
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.claimedItemImage {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.claimedItemName {
+  font-size: 1.3rem;
+  color: #343a40;
+  margin: 1rem 0;
+}
+
+.claimedItemDescription {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 1rem;
+}
+
+.statusBox {
+  background-color: #007bff; /* Changed color for claimed items status */
+  color: white;
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  width: 90%;
+  text-align: center;
+}
+
+.deleteButton {
+  padding: 7px 12px;
+  font-size: 1rem;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 50%;
+  margin-top: 0.5rem;
+}
+
+.deleteButton:hover {
+  background-color: #c82333;
+}
+
+@media (max-width: 768px) {
+  .claimedItemsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .claimedItemCard {
+    max-width: 90%;
+  }
+
+  .claimedItemsContainer h1 {
+    font-size: 2rem;
+  }
+}
