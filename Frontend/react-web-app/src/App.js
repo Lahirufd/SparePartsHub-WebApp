@@ -21,6 +21,7 @@ import AdminDashboard from './Pages/AdminDashboard/AdminDashboard';
 import UsersPage from './Pages/UsersPage/UsersPage';
 import OrdersPage from './Pages/OrdersPage/OrdersPage';
 import AdminItemsPage from './Pages/AdminItemsPage/AdminItemsPage';
+import AdminWarrantyPage from './Pages/AdminWarrantyPage/AdminWarrantyPage';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
         <Route path="/admin/users" element={<UsersPage />} />
         <Route path="/admin/orders" element={<OrdersPage />} />
         <Route path="/admin/view-items" element={<AdminItemsPage />} />
+        <Route path="/admin/warranty-items" element={<AdminWarrantyPage />} />
       </Routes>
     </Router>
   );

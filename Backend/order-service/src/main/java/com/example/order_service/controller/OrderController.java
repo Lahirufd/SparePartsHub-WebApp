@@ -57,14 +57,14 @@ public class OrderController {
     }
 
     @GetMapping(path = "/orders")
-    public List<Order> findAllUsers() {
+    public List<Order> findAllOrders() {
         return orderService.getAllOrders();
     }
 
-    @PutMapping("/orders/{Id}")
-    public Order updateOrder(@PathVariable Integer Id, @RequestBody Order order) {
-        return orderService.updateOrder(Id, order);
+    @PatchMapping("/orders/{id}")
+    public Order updateOrderStatus(
+            @PathVariable int id,
+            @RequestParam String status) {
+        return orderService.updateOrderStatus(id, status);
     }
-
-
 }

@@ -40,11 +40,14 @@ public class OrderService {
         return orderRepository.findAll();
     }
 
-    public Order updateOrder(Integer Id, Order updatedOrder) {
-        Order existingOrder = orderRepository.findById(Id)
-                .orElseThrow(() -> new RuntimeException("Order not found"));
+    public Order updateOrderStatus(int id, String status) {
+        Order existingOrder = orderRepository.findById(id).orElse(null);
 
-        existingOrder.setStatus(updatedOrder.getStatus());
+        if (existingOrder == null) {
+            return null;
+        }
+
+        existingOrder.setStatus(status);
 
         return orderRepository.save(existingOrder);
     }

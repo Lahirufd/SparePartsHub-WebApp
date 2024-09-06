@@ -46,17 +46,23 @@ const OrdersPage = () => {
         setSelectedStatus({ ...selectedStatus, [orderId]: status });
     };
 
-    const handleUpdateStatus = (orderId) => {
-        const order = orders.find(order => order.id === orderId);
-        const updatedOrder = { ...order, status: selectedStatus[orderId] };
-        axios.put(`http://localhost:8082/orders/${orderId}`, updatedOrder)
-            .then(response => {
-                setOrders(orders.map(order => 
-                    order.id === orderId ? response.data : order
-                ));
-                setSelectedStatus({ ...selectedStatus, [orderId]: '' });
-            })
-            .catch(error => console.error('Error updating order status:', error));
+    const handleUpdateStatus = (orderId, newStatus) => {
+        const formData = new URLSearchParams();
+        formData.append('status', newStatus);
+    
+        axios.patch(`http://localhost:8082/orders/${orderId}`, formData, {
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+        })
+        .then(() => {
+          alert("Status updated successfully!");
+          fetchOrders();
+        })
+        .catch((error) => {
+          console.error("Error updating warranty status", error);
+          alert("Failed to update status. Check console for details.");
+        });
     };
 
     const handleDeleteOrder = (orderId) => {

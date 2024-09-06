@@ -51,4 +51,16 @@ public class ItemController {
     public List<Item> getItemsByUserId(@PathVariable int userId) {
         return itemService.findItemByUserId(userId);
     }
+
+    @GetMapping(path = "/items")
+    public List<Item> viewAllItems() {
+        return itemService.getAllItems();
+    }
+
+    @PatchMapping("/items/{id}")
+    public Item updateItemStatus(
+            @PathVariable int id,
+            @RequestParam String status) {
+        return itemService.updateItemStatus(id, status);
+    }
 }
