@@ -1,42 +1,77 @@
-/* WarrantyItemsPage.module.css */
-
 .main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f9f9f9;
   padding: 20px;
-  max-width: 600px;
-  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #333;
 }
 
 .form {
+  width: 100%;
+  max-width: 600px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.formGroup {
   display: flex;
   flex-direction: column;
 }
 
-.formGroup {
-  margin-bottom: 15px;
+.formGroup label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.formGroup input[type="file"],
+.formGroup textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+  height: 100px;
 }
 
 .submitButton {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px;
+  padding: 10px 20px;
+  background-color: rgb(46, 44, 44);
+  color: #fff;
   border: none;
+  border-radius: 4px;
   cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-.header {
-  background-color: #4CAF50;
-  padding: 10px;
-  text-align: center;
-  color: white;
+.submitButton:hover {
+  background-color: black;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-.footer {
-  background-color: #4CAF50;
-  padding: 10px;
-  text-align: center;
-  color: white;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
+@media (max-width: 768px) {
+  .form {
+    max-width: 100%;
+  }
 }

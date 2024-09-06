@@ -41,8 +41,8 @@ function WarrantyItemsPage() {
         <div>
             <Header />
             <main className={styles.main}>
-                <h2>Upload Warranty Item</h2>
                 <form onSubmit={handleSubmit} className={styles.form}>
+                <h2>Upload Warranty Item</h2>
                     <div className={styles.formGroup}>
                         <label htmlFor="picture">Picture:</label>
                         <input type="file" id="picture" onChange={handlePictureChange} required />
