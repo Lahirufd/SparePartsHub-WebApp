@@ -112,7 +112,7 @@ const OrdersPage = () => {
                                 <option value="Accepted">Accepted</option>
                                 <option value="Done">Done</option>
                             </select>
-                            <button onClick={() => handleUpdateStatus(order.id)} className={styles.updateButton}>Update Status</button>
+                            <button onClick={() => handleUpdateStatus(order.id, selectedStatus[order.id])} className={styles.updateButton}>Update Status</button>
                             </div>
                             <button onClick={() => handleDeleteOrder(order.id)} className={styles.deleteButton}>Delete Order</button>
                         </div>

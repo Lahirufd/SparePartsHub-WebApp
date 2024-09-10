@@ -64,7 +64,7 @@
 }
 
 .statusBox {
-  background-color: #007bff; /* Changed color for claimed items status */
+  background-color: #007bff;
   color: white;
   padding: 5px 12px;
   border-radius: 8px;
