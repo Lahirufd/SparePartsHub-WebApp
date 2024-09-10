@@ -8,7 +8,7 @@ const UsersPage = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch('http://localhost:8080/users');
+        const response = await fetch('http://localhost:8080/ums-api/users');
         const data = await response.json();
         setUsers(data);
       } catch (error) {
@@ -22,16 +22,13 @@ const UsersPage = () => {
   const deleteUser = async (userId) => {
     if (window.confirm('Are you sure you want to delete this account?')) {
       try {
-        // Delete warranty items associated with the user
-        const warrantyServiceUrl = `http://localhost:8083/wis-api/items/user/${userId}`;
+        const warrantyServiceUrl = `http://localhost:8083/wis-api/user/${userId}/items`;
         await axios.delete(warrantyServiceUrl);
   
-        // Delete orders associated with the user
-        const orderServiceUrl = `http://localhost:8082/orders/user/${userId}`;
+        const orderServiceUrl = `http://localhost:8082/os-api/user/${userId}/orders`;
         await axios.delete(orderServiceUrl);
   
-        // Delete the user account
-        const userServiceUrl = `http://localhost:8080/users/${userId}`;
+        const userServiceUrl = `http://localhost:8080/ums-api/users/${userId}`;
         const userResponse = await axios.delete(userServiceUrl);
   
         if (userResponse.status === 200) {

@@ -27,7 +27,7 @@ public class ItemController {
         return itemService.uploadItem(userId, picture.getBytes(), description);
     }
 
-    @DeleteMapping(path = "/items/user/{userId}")
+    @DeleteMapping(path = "/user/{userId}/items")
     public ResponseEntity<String> deleteItemsByUserId(@PathVariable int userId) {
         try {
             itemService.deleteItemsbyUserId(userId);

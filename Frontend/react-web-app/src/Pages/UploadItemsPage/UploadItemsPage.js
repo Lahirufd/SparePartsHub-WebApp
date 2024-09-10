@@ -12,7 +12,7 @@ const UploadSellingItem = () => {
 
     useEffect(() => {
         if (isEditMode && itemId) {
-            axios.get(`http://localhost:8081/items/${itemId}`)
+            axios.get(`http://localhost:8081/is-api/items/${itemId}`)
                 .then(response => {
                     const item = response.data;
                     setItemName(item.name);
@@ -50,13 +50,13 @@ const UploadSellingItem = () => {
 
         let response;
         if (isEditMode) {
-            response = await axios.put(`http://localhost:8081/items/${itemId}`, formData, {
+            response = await axios.put(`http://localhost:8081/is-api/items/${itemId}`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
             });
         } else {
-            response = await axios.post('http://localhost:8081/items', formData, {
+            response = await axios.post('http://localhost:8081/is-api/items', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

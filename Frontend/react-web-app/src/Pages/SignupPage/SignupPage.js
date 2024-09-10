@@ -25,7 +25,7 @@ const SignupPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch('http://localhost:8080/users', {
+    fetch('http://localhost:8080/ums-api/users', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

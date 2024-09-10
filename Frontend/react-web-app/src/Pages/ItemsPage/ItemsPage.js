@@ -13,7 +13,7 @@ const ItemsPage = () => {
 
   const fetchItems = async (name = '') => {
     try {
-      const response = await fetch(`http://localhost:8081/items${name ? `?name=${name}` : ''}`);
+      const response = await fetch(`http://localhost:8081/is-api/items${name ? `?name=${name}` : ''}`);
       const data = await response.json();
       setItems(data);
     } catch (error) {
@@ -27,7 +27,7 @@ const ItemsPage = () => {
 
   const handleBuy = async (itemId) => {
     const userId = localStorage.getItem('userId');
-    await fetch(`http://localhost:8082/orders?userId=${userId}&itemId=${itemId}`, {
+    await fetch(`http://localhost:8082/os-api/orders?userId=${userId}&itemId=${itemId}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ userId, itemId }),

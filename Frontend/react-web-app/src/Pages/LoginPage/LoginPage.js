@@ -10,7 +10,7 @@ const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('http://localhost:8080/login', {
+    const response = await fetch('http://localhost:8080/ums-api/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -19,7 +19,7 @@ const LoginPage = () => {
     });
 
     if (response.ok) {
-      const userIdResponse = await fetch(`http://localhost:8080/users?username=${username}`);
+      const userIdResponse = await fetch(`http://localhost:8080/ums-api/users?username=${username}`);
       if (userIdResponse.ok) {
         const userId = await userIdResponse.json();
         localStorage.setItem('userId', userId);

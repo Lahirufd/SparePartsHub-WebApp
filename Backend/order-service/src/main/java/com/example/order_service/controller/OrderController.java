@@ -21,7 +21,7 @@ public class OrderController {
         return orderService.createOrder(userId, itemId);
     }
 
-    @DeleteMapping(path = "/orders/user/{userId}")
+    @DeleteMapping(path = "/user/{userId}/orders")
     public ResponseEntity<String> deleteOrdersByUserId(@PathVariable int userId) {
         try {
             orderService.deleteOrdersByUserId(userId);
@@ -31,7 +31,7 @@ public class OrderController {
         }
     }
 
-    @DeleteMapping(path = "/orders/item/{itemId}")
+    @DeleteMapping(path = "/item/{itemId}/orders")
     public ResponseEntity<String> deleteOrdersByItemId(@PathVariable int itemId) {
         try {
             orderService.deleteOrdersByItemId(itemId);
