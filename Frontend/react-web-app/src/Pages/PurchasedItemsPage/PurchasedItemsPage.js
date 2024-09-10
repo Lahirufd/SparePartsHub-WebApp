@@ -17,7 +17,7 @@ const PurchasedItemsPage = () => {
 
   const fetchOrders = async () => {
     try {
-      const ordersResponse = await axios.get(`http://localhost:8082/orders/${userId}`);
+      const ordersResponse = await axios.get(`http://localhost:8082/os-api/orders/${userId}`);
       setOrders(ordersResponse.data);
       fetchItems(ordersResponse.data.map(order => order.itemId));
     } catch (error) {
@@ -27,7 +27,7 @@ const PurchasedItemsPage = () => {
 
   const fetchItems = async (itemIds) => {
     try {
-      const itemsPromises = itemIds.map(id => axios.get(`http://localhost:8081/items/${id}`));
+      const itemsPromises = itemIds.map(id => axios.get(`http://localhost:8081/is-api/items/${id}`));
       const itemsResponses = await Promise.all(itemsPromises);
       setItems(itemsResponses.map(response => response.data));
     } catch (error) {
@@ -37,7 +37,7 @@ const PurchasedItemsPage = () => {
 
   const handleDeleteOrder = async (orderId) => {
     try {
-      await axios.delete(`http://localhost:8082/orders/${orderId}`);
+      await axios.delete(`http://localhost:8082/os-api/orders/${orderId}`);
       setOrders(orders.filter(order => order.id !== orderId));
       alert('Order deleted successfully!');
     } catch (error) {

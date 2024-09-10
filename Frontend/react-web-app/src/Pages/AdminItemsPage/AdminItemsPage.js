@@ -12,7 +12,7 @@ const AdminItemsPage = () => {
 
   const fetchItems = async (name = '') => {
     try {
-      const response = await axios.get(`http://localhost:8081/items${name ? `?name=${name}` : ''}`);
+      const response = await axios.get(`http://localhost:8081/is-api/items${name ? `?name=${name}` : ''}`);
       setItems(response.data);
     } catch (error) {
       console.error('Error fetching items:', error);
@@ -26,18 +26,15 @@ const AdminItemsPage = () => {
   const handleDeleteItem = async (itemId) => {
     if (window.confirm('Are you sure you want to delete this item and its associated orders?')) {
       try {
-        // First, delete orders associated with the item
-        const orderServiceUrl = `http://localhost:8082/orders/item/${itemId}`;
+        const orderServiceUrl = `http://localhost:8082/os-api/item/${itemId}/orders`;
         const orderResponse = await axios.delete(orderServiceUrl);
 
         if (orderResponse.status === 200 || orderResponse.status === 204) {
-          // Then, delete the item
-          const itemServiceUrl = `http://localhost:8081/items/${itemId}`;
+          const itemServiceUrl = `http://localhost:8081/is-api/items/${itemId}`;
           const itemResponse = await axios.delete(itemServiceUrl);
 
           if (itemResponse.status === 200) {
             alert('Item and associated orders deleted successfully.');
-            // Refresh the list of items
             fetchItems();
           } else {
             alert('Failed to delete item.');

@@ -19,7 +19,7 @@ const OrdersPage = () => {
     }, [orders]);
 
     const fetchOrders = () => {
-        let url = 'http://localhost:8082/orders';
+        let url = 'http://localhost:8082/os-api/orders';
         if (searchUserId) {
             url += `/${searchUserId}`;
         }
@@ -31,7 +31,7 @@ const OrdersPage = () => {
     const fetchItemsDetails = () => {
         orders.forEach(order => {
             const itemId = order.itemId;
-            axios.get(`http://localhost:8081/items/${itemId}`)
+            axios.get(`http://localhost:8081/is-api/items/${itemId}`)
                 .then(response => {
                     setItemDetails(prevDetails => ({
                         ...prevDetails,
@@ -50,7 +50,7 @@ const OrdersPage = () => {
         const formData = new URLSearchParams();
         formData.append('status', newStatus);
     
-        axios.patch(`http://localhost:8082/orders/${orderId}`, formData, {
+        axios.patch(`http://localhost:8082/os-api/orders/${orderId}`, formData, {
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
           },
@@ -66,7 +66,7 @@ const OrdersPage = () => {
     };
 
     const handleDeleteOrder = (orderId) => {
-        axios.delete(`http://localhost:8082/orders/${orderId}`)
+        axios.delete(`http://localhost:8082/os-api/orders/${orderId}`)
             .then(() => {
                 setOrders(orders.filter(order => order.id !== orderId));
             })

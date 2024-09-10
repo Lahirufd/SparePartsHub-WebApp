@@ -17,13 +17,13 @@ const ProfilePage = () => {
 
     if (window.confirm('Are you sure you want to delete your account?')) {
       try {
-        const warrantyServiceUrl = `http://localhost:8083/wis-api/items/user/${id}`;
+        const warrantyServiceUrl = `http://localhost:8083/wis-api/user/${id}/items`;
         await axios.delete(warrantyServiceUrl);
 
-        const orderServiceUrl = `http://localhost:8082/orders/user/${id}`;
+        const orderServiceUrl = `http://localhost:8082/os-api/user/${id}/orders`;
         await axios.delete(orderServiceUrl);
 
-        const userServiceUrl = `http://localhost:8080/users/${id}`;
+        const userServiceUrl = `http://localhost:8080/ums-api/users/${id}`;
         const userResponse = await axios.delete(userServiceUrl);
 
         if (userResponse.status === 200) {
